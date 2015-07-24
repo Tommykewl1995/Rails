@@ -7,7 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Product.delete_all
 for i in 1..10 do
-  Product.create(title: 'My first attempt',
+  o = [('a'..'z'), ('A'..'Z')].map { |i| i.to_a }.flatten
+  string = (0...50).map { o[rand(o.length)] }.join
+  Product.create(title: string,
     description:
     %{<p>
     This is my first attempt to make a shitty web app in rails framework.
